@@ -1,0 +1,19 @@
+﻿@model List<NinjaTurtlesMVC.Data.Models.Turtle>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<img class="centered" src="/images/TMNTLogo.png" width="325" height="200" class="well-sm" >
+
+<div class="row well-lg centered">
+    @foreach (var Turtle in Model)
+    {
+        <div class="col-md-6 well-lg centered">
+            <a class="char" href="/Home/Details/@Turtle.Id">
+                <h2>@Turtle.Name</h2>
+                <img src="/images/@Turtle.PhotoSm" width="250" height="250" />
+            </a>
+        </div>
+    }
+</div>
+<a href="/Home/Create/" class="btn btn-success">Add a new character</a>
